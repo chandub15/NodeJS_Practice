@@ -1,0 +1,28 @@
+var fs = require('fs');
+var commands = {
+	'pwd': function () {
+		console.log(process.cwd());
+	},
+	'ls': function (args) {
+		fs.readdir(args[0] || process.cwd(), function (err, entries) {
+		entries.forEach(function (e) {
+			console.log(e);
+			});
+		});
+	},
+	'sum':function(args){
+		console.log("test sum");
+		console.log (Number(args[0]) + Number(args[1]));
+	},
+	'mul':function(){
+		console.log("test mul");
+	}	
+	};
+
+
+process.stdin.on('data', function (input) {
+	var matches = input.toString().match(/(\w+)(.*)/);
+	var command = matches[1].toLowerCase();
+	var args = matches[2].trim().split(/\s+/);	
+	commands[command](args);
+});

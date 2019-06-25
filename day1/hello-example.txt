@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script>
+		print = function(msg){
+			console.log(msg);
+		}
+		timmerCounter = function(source, count){
+			for(var i=0;i<count; i++){
+				print(source + " " + i +" seconds are over.");
+			}
+		}
+	</script>
+<form>
+	<input type="" name="" value="Vivek">
+	<input type="" name="" value="Area">
+	<input type="button" name="" value="B1" onclick="timmerCounter('B1',20)">
+	<input type="button" name="" value="B2" onclick="timmerCounter('B2',10)">
+</form>
+</body>
+</html>

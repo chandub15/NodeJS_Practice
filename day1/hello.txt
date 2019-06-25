@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script>
+		print = function(msg){
+			console.log(msg)
+		}
+		timeCounter = function(src,count){
+			for(var i=0; i<count; i++){
+				print(src +":"+i +" seconds are over.");
+			}
+		}
+	</script>
+	<h1>Hello IBM Chennai</h1>
+<form>
+	<input type="" name="" value="Chennai">
+	<input type="" name="" value="Vivek">
+	<input type="button" onclick="timeCounter('B1',20)"name="" value="B1">
+	<input type="button" onclick="timeCounter('B2',10)" name="" value="B2">
+
+</form>
+</body>
+</html>

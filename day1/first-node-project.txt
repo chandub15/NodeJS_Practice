@@ -1,0 +1,18 @@
+Create a first nodejs project.
+Steps:
+1. mkdir sampleNode
+2. cd sampleNode
+3. npm init
+--------
+4. npm install async
+
+This will install async from below location to node_nodules 
+https://www.npmjs.com/package/async
+-------
+manually create  main.js 
+(main.js app.js index.js)
+---------
+npm
+node
+package.json
+node_modules

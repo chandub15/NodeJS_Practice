@@ -1,0 +1,11 @@
+//math.js
+/*var math = {};
+math.sum = function(a,b){return a+b;};
+math.mul = function(a,b){return a*b;};
+module.exports = math;
+*/
+
+//math-client.js
+var mathM = require('./math.js');
+console.log(mathM.sum(3,5));
+console.log(mathM.mul(3,5));

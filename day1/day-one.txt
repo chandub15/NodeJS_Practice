@@ -1,0 +1,173 @@
+DOM => browser 1995 (Lotus Notes)
+traget marget is newpaper = > sharing information
+
+<h1>
+<body>
+------
+1995 - 96 
+server => coffeeScript => JavaScript ==>
+DOM 
+
+-----
+Window is mother 
+
+JavaScript
+---------------------------
+number
+string
+undefined
+object (null)
+function
+object ({})
+boolean
+object ([]) array
+---------------------------- 
+DOM => document 
+
+
+database
+
+-------------------------
+id/name | type | value
+a | number | 90
+sum | function | ƒ (a,b){return a+b;}
+------
+
+1900 => NewsPapper => 
+Reporter => news => story  => 
+script => printing machine
+
+3 idiots =>
+script => dialogs 
+
+script => goes as an input to existing program and make existing to behave or in run in some manner.
+
+
+
+Why do you want Object Oriented ...
+because real world is object oriented ....
+Person p = new Person();
+
+REAL WORLD is event Oriented ... 
+JavaScript orineted 
+
+Java is object oriented in memory (i.e. in machine)
+garbage collection
+machine is sequential execution 
+
+declaretive | programming 
+---------
+sr | JavaScript | Java
+===================
+1. | node is runtime envoronment for javaScript | JRE is for java
+2. | less number of lines of code | more code
+3. | script (Jini)| language (write / build / run)
+4. | OOPs (function with inner functions) | OOPs (classes)
+5. | OOPS is not for machine (FAST) | OOPS is memory (SLOW)
+6. | single threaded | multi threaded
+7. | Event Oriented | Java is NOT
+8. | Declarative approach | Java does not have
+-----
+
+
+Love => Understand 
+
+------
+assignment: to get the timer example working with time
+----
+Rules: 
+--
+1: You can take the help from Google
+2: No help from your buddies / humans
+----
+Example : 
+Chat example:
+
+Tomcat
+-----
+100000 conected users
+
+100000 threads 
+cpu (8 core) 
+
+===========
+Browser is (DOM + JavaScript Engine)
+Node is (Process + System+ network API + JavaScript Engine)
+
+
+
+vivek$> node hello.js 
+Hello
+Viveks-MacBook-Air:workspace-nodejs vivek$ node
+> a = 8+9 + '1' +7
+'1717'
+> process.exit(0)
+
+
+==============
+nodemon
+$> npm install -g nodemon
+nodemon server.js
+
+---------
+application (http)
+transfer (TCP / UDP)
+network layer
+physical
+
+
+Ryan | (net / socket)
+
+client => server 
+---
+client => server => slient ( chat new age applications )
+telnet localhost 3000
+---
+telnet
+>open localhost 3000
+
+Node ==> junction 
+Node.js (single threaded . efficiently managing network (event) as a callback )
+   |
+---|----
+   |
+
+NPM : node.exe | npm.exe | npx.exe
+NPM : node package manager 
+
+json => JavaScript Object Notation
+XML => XML 
+------
+json
+
+XML => XSLT 
+json => {'name':'Vivek'}
+
+var => function scope 
+let
+nothing (window) //window ==>
+function (){} => window {}//function scope
+this ==> object copy
+
+setup.txt
+---------
+1. Sublime Txt 3 (or) VSCode
+2. Chrome
+3. NodeJS (internert connection)
+---
+
+http://13.126.54.164/nodejs/
+
+
+Brief introduction
+MySelf:
+Vivek (15+years)
+----------
+JavaScript, JAVA, Python,
+----
+NodeJS(training session)
+Day one : JavaScript , NodeJS (events and IO, networking , http / url handling)
+Day two : Routes (Express JS) Add /Update / DELETE / CRUD (data at server)
+Day three: connrcting it with databases. MySQL / Mongo DB
+--------
+Name: overall Exp: JavaScript (and Nodejs)
