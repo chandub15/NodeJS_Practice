@@ -1,0 +1,35 @@
+//Delete
+Steps:
+--------
+Step 1:
+Add jQuery:
+----
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+----
+
+Step 2:
+In Customers.ejs (under script)
+----
+    doDelete = function(id){
+        var customer = {id:id};
+        $.ajax({
+          type: "DELETE",
+          url: "/api/customers",
+          data: customer,
+          success: function(data){
+            console.log(JSON.stringify(data));
+            if(data.result == "success"){
+              //alert("login success ");
+              location = "/customers?"+customer.id;
+            }
+          }
+        });
+      }
+----
+Step 3:
+under routes/api/customers.js
+--
+router.delete('/', function(req, res, next) {
+	service.deleteCustomer(req.body);
+	res.send({result:'success', msg:'customer added successfully.'});
+});

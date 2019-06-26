@@ -1,0 +1,75 @@
+// page 1 http://13.126.54.164/nodejs/
+//node-js-ppt/express-js-guide.pdf
+var express = require('express');
+var app = express();
+
+var customers = [
+{name:"Vivek", 
+email:"vivek@gmail.com",
+address:"India"},
+{name:"Rama",
+ email:"rama@gmail.com",
+ address:"India"},
+];
+
+app.get('/', function (req, res) {
+	res.send('Hello Express World!');
+});
+
+app.get('/api/customers', function (req, res) {
+	res.send(customers);
+});
+
+app.get('/app', function (req, res) {
+	res.send('Hello App World!');
+});
+
+app.post('/app', function (req, res) {
+	res.send('Hello Express App Post!');
+});
+
+app.all('/sample', function (req, res) {
+	res.send('Hello Express sample!');
+});
+
+// will match acd and abcd
+app.get('/ab?cd', function(req, res) {
+	res.send('ab?cd');
+});
+// will match abcd, abbcd, abbbcd, and so on
+app.get('/ab+cd', function(req, res) {
+	res.send('ab+cd');
+});
+// will match abcd, abxcd, abRABDOMcd, ab123cd, and so on
+app.get('/ab*cd', function(req, res) {
+	res.send('ab*cd');
+});
+// will match /abe and /abcde
+app.get('/ab(cd)?e', function(req, res) {
+	res.send('ab(cd)?e');
+});
+
+var cb0 = function (req, res, next) {
+	console.log('CB0');
+	next();
+}
+
+var cb1 = function (req, res, next) {
+	console.log('CB1');
+	next();
+}
+var cb2 = function (req, res) {
+	console.log('cb2');
+	res.send('Hello from C!');
+}
+var cd2 = function (req, res) {
+	console.log('cd2');
+	res.send('Hello from D!');
+}
+
+app.get('/example/c', [cb0, cb1, cb2]);
+app.get('/example/d', [cb0, cb1, cd2]);
+
+var server = app.listen(3000, function () {
+	console.log('Example app listening at 3000');
+});

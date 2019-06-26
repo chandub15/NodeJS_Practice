@@ -1,0 +1,98 @@
+Steps for update
+
+------
+Step 1: In customers.ejs
+------
+      doEdit = function(id){
+        location = '/customers/edit/'+id;
+      }
+-------      
+
+
+Step 2: In customer-service.js
+-----
+customerService.getCustomerById =function(id){
+	for (var i = 0; i < customers.length; i++) {
+		if(customers[i].id == id){
+			return customers[i];
+		}
+	}
+	return {};
+}
+-------
+
+
+Step 3: In /pages/customers.js
+---
+router.get('/edit/:id', function(req, res) {
+  console.log("id is "+req.params.id);
+  res.render('edit-customer', 
+  	{ title: 'Update Customer', data:service.getCustomerById(req.params.id)});
+});
+----
+
+Step 4: create edit-customer.ejs
+----
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+      updateCustomer=function(){
+          var customer = {};
+          customer.id=$("#id").val();
+          customer.name=$("#name").val();
+          customer.email=$("#email").val();
+          customer.phone=$("#phone").val();
+          customer.address=$("#address").val();
+          $.ajax({
+          type: "PUT",
+          url: "/api/customers",
+          data: customer,
+          success: function(data){
+            console.log(JSON.stringify(data));
+            if(data.result == "success"){
+              //alert("login success ");
+              location = "/customers";
+            }
+          }
+        });
+      }
+    </script>
+    <h1><%= title %></h1>
+    <form>
+      <input id="id" type="text" name="" value='<%= data.id %>' placeholder="id" readonly><br/><br/>
+      <input id="name" type="text" value='<%= data.name %>' name="" placeholder="name"><br/><br/>
+      <input id="email" type="text" value='<%= data.email %>' name="" placeholder="email"><br/><br/>
+      <input value='<%= data.phone %>' id="phone" type="text" name="" placeholder="phone"><br/><br/>
+      <input id="address" value='<%= data.address %>' type="text" name="" placeholder="address"><br/><br/>
+      <input type="button" name="" onclick="updateCustomer()" value="Update Customer">
+    </form>
+  </body>
+</html>
+
+----
+
+Step 5: In /api/customer.js
+------
+router.put('/', function(req, res, next) {
+	service.updateCustomer(req.body);
+	res.send({result:'success', msg:'customer added successfully.'});
+});
+
+
+Step 6:  
+In customer-service.js 
+--------
+customerService.updateCustomer = function(customer){
+	for (var i = 0; i < customers.length; i++) {
+		if(customers[i].id == customer.id){
+			customers[i] = customer;
+			return;
+		}
+	}
+}

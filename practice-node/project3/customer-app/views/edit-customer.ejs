@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+      updateCustomer=function(){
+          var customer = {};
+          customer.id=$("#id").val();
+          customer.name=$("#name").val();
+          customer.email=$("#email").val();
+          customer.phone=$("#phone").val();
+          customer.address=$("#address").val();
+          $.ajax({
+          type: "PUT",
+          url: "/api/customers",
+          data: customer,
+          success: function(data){
+            console.log(JSON.stringify(data));
+            if(data.result == "success"){
+              //alert("login success ");
+              location = "/pages/customers";
+            }
+          }
+        });
+      }
+    </script>
+    <h1><%= title %></h1>
+    <form>
+      <input id="id" type="text" name="" value='<%= data.id %>' placeholder="id" readonly><br/><br/>
+      <input id="name" type="text" value='<%= data.name %>' name="" placeholder="name"><br/><br/>
+      <input id="email" type="text" value='<%= data.email %>' name="" placeholder="email"><br/><br/>
+      <input value='<%= data.phone %>' id="phone" type="text" name="" placeholder="phone"><br/><br/>
+      <input id="address" value='<%= data.address %>' type="text" name="" placeholder="address"><br/><br/>
+      <input type="button" name="" onclick="updateCustomer()" value="Update Customer">
+    </form>
+  </body>
+</html>

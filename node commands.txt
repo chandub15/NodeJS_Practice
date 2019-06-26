@@ -1,0 +1,18 @@
+apache benchamark 
+---------------------
+ab -n 1000 -c 100 <link>
+
+
+chat---commands--
+telnet localhost 3000 //on both cmds
+
+
+-----------------------------------------
+npm install -g nodemon
+
+npm install express-generator -g
+
+express -e customer-app
+
+
+pm2- production process manager for node

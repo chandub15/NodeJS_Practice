@@ -1,0 +1,32 @@
+Add another view:
+
+Step one
+
+In views . create 
+login.ejs
+----
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <form>
+    	<input type="text" name="" placeholder="username"><br/><br/>
+    	<input type="password" name="" placeholder="password"><br/><br/>
+    	<input type="button" name="" value="Login">
+    </form>
+  </body>
+</html>
+-----
+
+
+Step two
+Under routes/index.js
+  
+  ----
+router.get('/login', function(req, res, next) {
+  res.render('login', { title: 'Login' });
+});

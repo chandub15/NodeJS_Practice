@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <script>
+      goPlaces = function(place){
+        location = place;
+      }
+    </script>
+    <h1><%= title %></h1>
+    <div>
+      <button onclick="goPlaces('/dashboard')">Dashboard</button> | 
+      <button onclick="goPlaces('/customers')">Customers</button> | 
+      <button onclick="goPlaces('/aboutus')">Aboutus</button> | 
+      <button onclick="goPlaces('/login')">Logout</button>
+      
+    </div>
+    <hr/>
+  </body>
+</html>

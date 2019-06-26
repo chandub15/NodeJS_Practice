@@ -1,0 +1,14 @@
+
+> mkdir expressapp
+> cd  expressapp
+> npm init 
+
+creata a file name "main.js" in expressapp
+copy page 1 example from express-guide.pdf
+
+>nodemon main.js
+
+install express
+> npm install express
+
+>nodemon main.js

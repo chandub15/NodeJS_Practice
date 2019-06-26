@@ -57,8 +57,9 @@ var fetch = function (req, res, next) {
     // next();//moves to businessLogic
 
     setTimeout(function(){
-        next();
+        next(); 
     },1000);
+    
 }
 var businessLogic = function (req, res, next) {
     console.log('CB1');

@@ -1,0 +1,59 @@
+1.     customers.ejs
+      -----
+      doEdit = function(id){
+        location = '/customers/edit/'+id;
+      }
+      ------
+
+2. make edit-customer.ejs
+---
+refer add-customer.ejs
+----------
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+      updateCustomer=function(){
+          var customer = {};
+          customer.id=$("#id").val();
+          customer.name=$("#name").val();
+          customer.email=$("#email").val();
+          customer.address=$("#address").val();
+          customer.phone=$("#phone").val();
+          $.ajax({
+          type: "PUT",
+          url: "/api/customers",
+          data: customer,
+          success: function(data){
+            console.log(JSON.stringify(data));
+            if(data.result == "success"){
+              location = '/customers';
+            }
+          }
+        });
+      }
+    </script>
+    <h1><%= title %></h1>
+    <form>
+      <input id="id" value="<%=data.id %>" type="text" name="" readonly><br/><br/>
+      <input id="name" value="<%=data.name %>" type="text" name="" placeholder="name"><br/><br/>
+      <input id="email" type="text" name="" placeholder="email" value="<%=data.email %>"><br/><br/>
+      <input id="address" type="text" name="" placeholder="address" value="<%=data.address %>"><br/><br/>
+      <input id="phone" type="text" name="" placeholder="phone" value="<%=data.phone %>"><br/><br/>
+    	<input type="button" name="" onclick="updateCustomer()" value="Update Customer">
+    </form>
+  </body>
+</html>
+-----------
+
+3. make a route entry under
+page-controller/customers.js
+--------
+router.get('/edit/:id', function(req, res, next) {
+  res.render('edit-customer', { title: 'Edit Customers',data:dService.getCustomerById(req.params.id)});
+});
